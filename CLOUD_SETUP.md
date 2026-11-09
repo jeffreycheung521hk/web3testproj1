@@ -26,6 +26,7 @@ unsupported 3、needs_review 10；續跑不重複輸出。不提供 localhost �
 `start_skill` 已保存，這份文件與腳本保留完整可審閱的本機替代內容；不宣稱已發布或在新任務驗證。
 需要在環境設定恢復保存能力後，保存腳本及上述啟動說明，再由使用者發布環境。
 
-GitHub Git 代理與 GitHub API 是不同能力；建立 PR 需要 `api.github.com` 網路存取與平台提供的
-有效 API 授權。本次 API CONNECT 曾被代理 403 拒絕。若使用真實 RPC，另允許指定供應商網域，
-並透過安全環境變數提供 RPC_URL；不需為離線展示提供任何秘密。
+GitHub Git 代理與 GitHub API 是不同能力。目前 `api.github.com` 已在環境版本 2 的允許清單中，
+實際 HTTPS 連線回傳 200，GitHub API 也已確認具備此 repo 的讀寫權限。
+若使用真實 RPC，另允許指定供應商網域，並透過安全環境變數提供 RPC_URL；
+不需為離線展示提供任何秘密。
