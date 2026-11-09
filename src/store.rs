@@ -149,20 +149,30 @@ impl Store {
         let fingerprint = json_fingerprint(o)?;
         let conn = Connection::open(path)?;
         conn.execute_batch("PRAGMA journal_mode=WAL; PRAGMA synchronous=FULL; PRAGMA cache_size=-4096; CREATE TABLE IF NOT EXISTS config (fingerprint TEXT NOT NULL, progress INTEGER NOT NULL); CREATE TABLE IF NOT EXISTS results (row INTEGER PRIMARY KEY, payment TEXT NOT NULL, signature TEXT NOT NULL, report TEXT NOT NULL); CREATE INDEX IF NOT EXISTS payment_idx ON results(payment); CREATE INDEX IF NOT EXISTS signature_idx ON results(signature);")?;
-        let progress = if exists {
-            let (saved, progress): (String, i64) =
-                conn.query_row("SELECT fingerprint,progress FROM config", [], |r| {
-                    Ok((r.get(0)?, r.get(1)?))
-                })?;
-            if saved != fingerprint {
-                return Err(invalid(
-                    "Resume rejected: input or decision settings changed",
-                ));
+        let saved: Option<(String, i64)> = conn
+            .query_row("SELECT fingerprint,progress FROM config", [], |r| {
+                Ok((r.get(0)?, r.get(1)?))
+            })
+            .optional()?;
+        let progress = match saved {
+            Some((saved, progress)) => {
+                if saved != fingerprint {
+                    return Err(invalid(
+                        "Resume rejected: input or decision settings changed",
+                    ));
+                }
+                progress
             }
-            progress
-        } else {
-            conn.execute("INSERT INTO config VALUES (?1,0)", [fingerprint])?;
-            0
+            None => {
+                let count: i64 =
+                    conn.query_row("SELECT count(*) FROM results", [], |r| r.get(0))?;
+                if count != 0 {
+                    return Err(invalid("State is inconsistent: results without checkpoint"));
+                }
+                // A crash during first-time database creation committed no work. Initialize safely.
+                conn.execute("INSERT INTO config VALUES (?1,0)", [fingerprint])?;
+                0
+            }
         };
         Ok(Self {
             conn,

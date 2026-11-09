@@ -115,7 +115,7 @@ cargo clippy --locked --all-targets --all-features -- -D warnings
 cargo test --locked --all-targets --all-features
 ```
 
-Cargo 整合測試會啟動 Python 標準函式庫本機 mock，執行 18 項驗收，包括錯誤分類、
+Cargo 整合測試會啟動 Python 標準函式庫本機 mock，執行 19 項驗收，包括錯誤分類、
 重試、併發、取消、SQLite 未提交回滾、CSV 重建、resume 拒絕變更、1,001 列跨批次及延遲出現的壞列。
 測試不需 API key 或真實資產。沒有 Rust 文件程式範例，不需 doctests。
 未宣稱實測 RSS 記憶體數值；資源設計與限制見 [DESIGN.md](DESIGN.md)。

@@ -225,6 +225,13 @@ class Acceptance(unittest.TestCase):
         self.run_cli(ok=False)
         self.assertEqual(marker.read_text(),'user content')
 
+    def test_resume_after_interrupted_database_initialization(self):
+        self.output.mkdir()
+        (self.output/'input.snapshot').write_bytes(self.input.read_bytes())
+        sqlite3.connect(self.output/'state.sqlite').close()
+        self.run_cli('--resume')
+        self.assertEqual(len(self.report()),len(ROWS))
+
 
 if __name__=='__main__':
     unittest.main(verbosity=2)

@@ -8,7 +8,7 @@ Validation on this branch:
 
 - `cargo fmt --all --check`: passed.
 - `cargo clippy --all-targets --all-features -- -D warnings`: passed.
-- `cargo test --all-targets --all-features`: passed; one Rust integration harness ran 18 Python standard-library acceptance tests against a local mock RPC.
+- `cargo test --all-targets --all-features`: passed; one Rust integration harness ran 19 Python standard-library acceptance tests against a local mock RPC.
 - Offline demo and resume: 19 rows, matched 2 / mismatch 4 / unsupported 3 / needs_review 10; no duplicate output on resume.
 - Tests cover owner/mint/amount mismatches, non-finalized/failed/null/missing/unsupported evidence, batching and bounded concurrency, 429 Retry-After, temporary 503, timeout, disconnect, permanent errors, response cap, cancellation, atomic batch rollback, report rebuilding, fingerprint rejection, u64 maximum arithmetic, preserved local files and 1,001 rows across eight batches.
 - No Rust documentation code examples; no doctests applicable. No live devnet test or RSS measurement claimed.
