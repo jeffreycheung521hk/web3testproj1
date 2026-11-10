@@ -1454,12 +1454,12 @@
         "version": "legacy",
         "transaction": {
           "signatures": [
-            "other"
+            "JTpB28XNwqVBmnRoGRzZNq9zFybdTcYsVPkFZj6fvUo78yDYyRF1mTP113GsMdDyFAUsLQYJbpkrMWmGYtN4shG"
           ],
           "message": {
             "accountKeys": [
               {
-                "pubkey": "4ahfaxgYLok1PoFu7qHhRPuRwR9fhNPTcdKn69Nkbf6U",
+                "pubkey": "missing-source-account",
                 "signer": false
               },
               {
