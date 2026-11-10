@@ -1,0 +1,26 @@
+[package]
+name = "payment-reconcile"
+version = "0.2.0"
+edition = "2024"
+license = "MIT"
+description = "Read-only Solana SPL Token payment reconciliation with bounded RPC and resumable audit records"
+readme = "README.md"
+repository = "https://github.com/jeffreycheung521hk/web3testproj1"
+keywords = ["solana", "reconciliation", "payments", "cli"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+bs58 = "0.5.1"
+clap = { version = "4.6.7", features = ["derive", "env"] }
+csv = "1.4.0"
+fs2 = "0.4.3"
+futures = "0.3.34"
+httpdate = "1.0.3"
+hyper = "1.12.0"
+reqwest = { version = "0.13.5", default-features = false, features = ["rustls", "json", "stream"] }
+rusqlite = { version = "0.41.1", features = ["bundled"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+sha2 = "0.11.1"
+snafu = "0.9.2"
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "time", "signal", "sync"] }

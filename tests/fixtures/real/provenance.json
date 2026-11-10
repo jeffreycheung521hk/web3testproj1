@@ -1,0 +1,52 @@
+{
+  "license": "Apache-2.0",
+  "upstream_capture_provenance": "https://github.com/gagliardetto/solana-go/blob/098741868128ef93ad973cfc0d5b2e14fc5c675b/introspection/testdata/README.md",
+  "independently_requeried": false,
+  "records": [
+    {
+      "file": "sync_native.json",
+      "source_repository": "https://github.com/gagliardetto/solana-go",
+      "source_commit": "098741868128ef93ad973cfc0d5b2e14fc5c675b",
+      "source_path": "introspection/testdata/sync_native.jsonParsed.json",
+      "source_url": "https://github.com/gagliardetto/solana-go/blob/098741868128ef93ad973cfc0d5b2e14fc5c675b/introspection/testdata/sync_native.jsonParsed.json",
+      "original_sha256": "1780055c428e3e135529f4b4cbea0e2acda2527a56f1baed1eff26d1eac9bc31",
+      "retained_sha256": "1780055c428e3e135529f4b4cbea0e2acda2527a56f1baed1eff26d1eac9bc31",
+      "modified": false,
+      "signature": "3wMPKe86EK4zZEuD6GycPoi3CvWrPBvvwzdLcrLv6JW2FNSq89Re1jhPbSvnw9H54aAMkkeU5F72k21mgAjYwqgB",
+      "slot": 175687414,
+      "block_time": 1675358593,
+      "version": "legacy",
+      "capture_date_claimed_by_upstream": "2026-11-09"
+    },
+    {
+      "file": "swap_v0.json",
+      "source_repository": "https://github.com/gagliardetto/solana-go",
+      "source_commit": "098741868128ef93ad973cfc0d5b2e14fc5c675b",
+      "source_path": "introspection/testdata/swap_v0.jsonParsed.json",
+      "source_url": "https://github.com/gagliardetto/solana-go/blob/098741868128ef93ad973cfc0d5b2e14fc5c675b/introspection/testdata/swap_v0.jsonParsed.json",
+      "original_sha256": "bbb7c8ef5db98693e13675063ee04a794558219a37fea5fa236c74e7c12a23c6",
+      "retained_sha256": "bbb7c8ef5db98693e13675063ee04a794558219a37fea5fa236c74e7c12a23c6",
+      "modified": false,
+      "signature": "2gyoib4jMXPiDWEjdXF7aGyZoFpAVuYtqi8vzowyMuAcxvJS9979Lm1WxDzhA4NMCrdo2i1gVMH6tHnWgtRRnjFg",
+      "slot": 467421519,
+      "block_time": 1794249619,
+      "version": 0,
+      "capture_date_claimed_by_upstream": "2026-11-09"
+    },
+    {
+      "file": "failed_v0.json",
+      "source_repository": "https://github.com/gagliardetto/solana-go",
+      "source_commit": "098741868128ef93ad973cfc0d5b2e14fc5c675b",
+      "source_path": "introspection/testdata/failed_v0.jsonParsed.json",
+      "source_url": "https://github.com/gagliardetto/solana-go/blob/098741868128ef93ad973cfc0d5b2e14fc5c675b/introspection/testdata/failed_v0.jsonParsed.json",
+      "original_sha256": "4171516c1af37e6747a1c94518be1df7a1cf4f35ab30cefb46e767198558f81f",
+      "retained_sha256": "4171516c1af37e6747a1c94518be1df7a1cf4f35ab30cefb46e767198558f81f",
+      "modified": false,
+      "signature": "3o1pyAxPBCwYvUriuVJzYmbpSTKZijBxWYMixRgLrwdgHz7tMKgMfqN8MzHR3TUkFeioUY4yr5bhMg2sBv1SVtp9",
+      "slot": 467421524,
+      "block_time": 1794249621,
+      "version": 0,
+      "capture_date_claimed_by_upstream": "2026-11-09"
+    }
+  ]
+}
